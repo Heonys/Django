@@ -5,3 +5,9 @@
 
 3. 모델이 신규로 생성되거나 변경되면 makemigrations 명령을
    먼저 수행한 후에 migrate 명령을 수행해 주어야한다
+
+
+
+render 함수 >> 내가가진 template에 data를 넣어보낼때 사용 // redirect랑 비교 됨 
+
+

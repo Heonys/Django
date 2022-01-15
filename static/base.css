@@ -1,0 +1,25 @@
+.MyDjango_logo{
+    font-family: 'Nanum Pen Script', cursive;
+}
+
+.MyDjango_footer{
+    text-align: 
+    center; margin-top: 2rem;
+}
+
+.MyDjango_footer_button{
+   font-size: 0.6rem;
+}
+
+.MyDjango_header{
+    text-align: center; 
+    margin: 2rem 0 ;
+ }
+
+.test{
+    color: crimson;
+    background-color: aqua;
+    width: 3rem;
+    height: 3rem;
+    margin: 1rem;
+}

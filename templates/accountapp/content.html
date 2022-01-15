@@ -3,9 +3,40 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div style="height: 20rem; background-color: tomato; border-radius: 1rem; margin: 2rem;">
-        <h1>Testing</h1>
+
+
+
+    <div style="text-align: center; margin: 2rem;">
+        
+        <h1 class="MyDjango_logo">
+            Testing
+        </h1>
+
+        <form action="/account/" name="formtest" method="POST">
+            {% csrf_token %}
+            <div>
+                <input type="text" name="contnet_input">
+            </div>
+            <div>
+                <input type="submit" class="btn btn-primary" value="post">
+            </div>
+
+            <!-- newMyTable_out가 있다면 if 안을 생성해라 -->
+            {% if newMyTable_list %} 
+                {% for index in newMyTable_list %}
+                    <h4>
+                        {{index.text}}
+                    </h4>
+                {% endfor %}    
+            {% endif %}
+
+        </form>
+
+
+
     </div>
+
+
 {% endblock %}
 
 
