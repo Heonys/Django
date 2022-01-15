@@ -1,3 +1,5 @@
+from django.urls import reverse
+from django.http import*
 from django.shortcuts import render
 
 from accountapp.models import MyTable
@@ -17,6 +19,10 @@ def index(request):
          
         newMyTable_list = MyTable.objects.all() # MyTable의 모든 데이터 긁어옴 
         
-        return render(request, 'accountapp/content.html', context={"newMyTable_list": newMyTable_list})
+        # return render(request, 'accountapp/content.html', context={"newMyTable_list": newMyTable_list})
+        return HttpResponseRedirect(reverse('accountapp:test'))
+        
     else:
-        return render(request, 'accountapp/content.html', context={"newMyTable_list": '이상한데'})
+        newMyTable_list = MyTable.objects.all() # MyTable의 모든 데이터 긁어옴 
+        
+        return render(request, 'accountapp/content.html', context={"newMyTable_list": newMyTable_list})

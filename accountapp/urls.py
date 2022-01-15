@@ -2,10 +2,11 @@ from django.contrib import admin
 from django.urls import path
 from . import views
 
+app_name = 'accountapp'
+
 urlpatterns = [
-    path('', views.index),
-    path('a/', views.index),
-    path('b/', views.index),
+    path('', views.index, name ='test'),
+
 ]
  
 # account/  
