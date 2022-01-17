@@ -1,3 +1,4 @@
+from django.urls import reverse, reverse_lazy
 from pathlib import Path
 
 
@@ -113,3 +114,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
+
+LOGIN_REDIRECT_URL = reverse_lazy('accountapp:test')
+LOOUT_REDIRECT_URL = reverse_lazy('accountapp:login')
