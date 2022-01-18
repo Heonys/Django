@@ -1,7 +1,7 @@
    
    <div class="MyDjango_header">
         <div>
-            <h1 class="MyDjango_logo">My First Django</h1>
+            <h1 class="MyDjango_logo">JIHEON'S Django</h1>
         </div>
         
         <div>
@@ -14,6 +14,9 @@
                <span>Login</span>
              </a>
           {% else %}
+             <a href="{% url 'accountapp:detail' pk=user.pk %}">
+               <span>MyPage</span>
+             </a>
              <a href="{% url 'accountapp:logout' %}?next={{ request.path }}">
                <span>Logout</span>
              </a>

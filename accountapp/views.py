@@ -2,7 +2,7 @@ from django.urls import reverse, reverse_lazy
 from django.http import*
 from django.shortcuts import render
 from accountapp.models import MyTable
-from django.views.generic import CreateView
+from django.views.generic import CreateView, DetailView
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 
@@ -40,3 +40,7 @@ class AccountCreateView(CreateView):
     template_name = 'accountapp/create.html'
     
     
+class AccountDetailView(DetailView):
+    model = User
+    context_object_name = 'target_user'
+    template_name = 'accountapp/detail.html'
