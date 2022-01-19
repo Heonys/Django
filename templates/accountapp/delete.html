@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-{% load bootstrap4 %}
 
 {% block content %}
 
@@ -8,15 +7,15 @@
 
     
     <div class="mb-4">
-        <h4>Update</h4>
+        <h4>Quit</h4>
     </div>
     
 
-    <form action="{% url 'accountapp:update' target_user.pk %}" method="POST">
+    <form action="{% url 'accountapp:delete' target_user.pk %}" method="POST">
         {% csrf_token %}
-        {% bootstrap_form form %}
+
         <br>
-        <input type="submit" class="brn btn-dark rounded-pill col-6 mt-4">
+        <input type="submit" class="brn btn-danger rounded-pill col-6 mt-4">
 
     </form>
 

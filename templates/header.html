@@ -5,19 +5,30 @@
         </div>
         
         <div>
-             <span>nav1</span> |
-             <span>nav2</span> |
+          <a href="{% url 'accountapp:test' %}">
+            {% comment %} 현재 어디에있든 로그인 하고나서 반환하는 next값에 현재 경로를 줌 {% endcomment %}
+            <span>어쩔티비</span>
+          </a>
+
+          <span>nav2</span> 
 
           {% if not user.is_authenticated %}
+
              <a href="{% url 'accountapp:login' %}?next={{ request.path }}">
-                  {% comment %} 현재 어디에있든 로그인 하고나서 반환하는 next값에 현재 경로를 줌 {% endcomment %}
+               {% comment %} 현재 어디에있든 로그인 하고나서 반환하는 next값에 현재 경로를 줌 {% endcomment %}
                <span>Login</span>
              </a>
+
+             <a href="{% url 'accountapp:create' %}">
+               <span>SignUp</span>
+             </a> 
+
+
           {% else %}
              <a href="{% url 'accountapp:detail' pk=user.pk %}">
                <span>MyPage</span>
              </a>
-             <a href="{% url 'accountapp:logout' %}?next={{ request.path }}">
+             <a href="{% url 'accountapp:logout' %}?next={% url 'accountapp:test' %}">
                <span>Logout</span>
              </a>
           {% endif %}
