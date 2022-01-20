@@ -5,6 +5,12 @@
         </div>
         
         <div>
+
+          <a href="{% url 'articleapp:list' %}">
+            {% comment %} 현재 어디에있든 로그인 하고나서 반환하는 next값에 현재 경로를 줌 {% endcomment %}
+            <span>article</span>
+          </a>
+
           <a href="{% url 'accountapp:test' %}">
             {% comment %} 현재 어디에있든 로그인 하고나서 반환하는 next값에 현재 경로를 줌 {% endcomment %}
             <span>어쩔티비</span>
