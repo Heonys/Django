@@ -1,5 +1,5 @@
 from django.urls import reverse, reverse_lazy
-from django.views.generic import CreateView, DetailView, UpdateView, DeleteView
+from django.views.generic import CreateView, DetailView, UpdateView, DeleteView, ListView
 from django.contrib.auth.models import User
 from articleapp.decorators import article_ownership
 from articleapp.froms import ArticleCreationForm
@@ -57,3 +57,9 @@ class ArticleDeleteView(DeleteView):
 
 
 
+
+class ArticleListView(ListView):
+    model = Article 
+    context_object_name = 'article_list'
+    template_name = 'articleapp/list.html'
+    paginate_by = 10
