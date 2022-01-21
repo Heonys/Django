@@ -5,9 +5,19 @@
 
 
 <style>
+
+    .container {
+        padding: 0;
+        margin: 0, auto;
+    }
+
+    .container a {
+        width: 45%;
+        max-width: 250px;
+    }
+
     .container div {
         width: 280px;
-        background-color: antiquewhite;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -18,69 +28,8 @@
         width: 100%;
         border-radius: 1rem;
     }
-
-.pagination-outer{ text-align: center; }
-.pagination{
-    font-family: 'Work Sans', sans-serif;
-    display: inline-flex;
-    }
-.pagination li a.page-link{
-    color: #555;
-    background-color: transparent;
-    font-size: 24px;
-    font-weight: 600;
-    padding: 6px 15px;
-    margin: 0 7px;
-    border: none;
-    overflow: hidden;
-    position: relative;
-    z-index: 1;
-}
-.pagination li.active a.page-link,
-.pagination li a.page-link:hover,
-.pagination li.active a.page-link:hover{
-    color: #fff;
-    background-color: transparent;
-    text-shadow: 0 0 2px #000;
-}
-.pagination li a.page-link:before,
-.pagination li a.page-link:after{
-    content: '';
-    background-color: #ff4757;
-    height: 100%;
-    width: 63%;
-    border-radius: 0 25px 25px 0;
-    transform: rotate(90deg);
-    transform-origin: top left;
-    position: absolute;
-    left: -2px;
-    top: 0;
-    z-index: -1;
-    transition: all 0.3s;
-}
-.pagination li a.page-link:after{
-    border-radius: 20px 0 0 20px;
-    transform: rotate(-90deg);
-    transform-origin: right top;
-    left: auto;
-    right: -2px;
-}
-.pagination li.active a.page-link:before,
-.pagination li a.page-link:hover:before,
-.pagination li.active a.page-link:after,
-.pagination li a.page-link:hover:after{
-    opacity: 1;
-    transform: rotate(0);
-}
-@media only screen and (max-width: 480px){
-    .pagination{ display: block; }
-    .pagination li{
-        display: inline-block;
-        margin: 0 0 5px;
-    }
-}
-
 </style>
+
 
     {% if article_list %}
     <div class="container">
@@ -100,9 +49,11 @@
 
     {% include 'snippets/pagination.html' with page_obj=page_obj %}
 
+
+    
    <div style="text-align: center;">
-        <a href="{% url 'articleapp:create' %}" class="btn btn-dark rounded-pill col-3 mt-3 mb-3">
-            Create Article
+        <a href="{% url 'articleapp:create' %}" class="btn btn-dark rounded-pill px-3 mt-3 mb-3">
+            Create
         </a>
    </div>
   
