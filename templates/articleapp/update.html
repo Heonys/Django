@@ -12,7 +12,7 @@
     </div>
     
 
-    <form action="{% url 'articleapp:update' target_article.pk %}" method="POST">
+    <form action="{% url 'articleapp:update' pk=target_article.pk %}" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {% bootstrap_form form %}
         <br>

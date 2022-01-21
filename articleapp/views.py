@@ -38,8 +38,9 @@ class ArticleDetailView(DetailView):
 @method_decorator(article_ownership, 'post')
 class ArticleUpdateView(UpdateView):
     model = Article
+    context_object_name = 'target_article'
     form_class = ArticleCreationForm
-    template_name = 'articleapp/create.html'
+    template_name = 'articleapp/update.html'
 
     def get_success_url(self):
         return reverse('articleapp:detail', kwargs={'pk':self.object.pk})
