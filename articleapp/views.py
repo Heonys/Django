@@ -6,6 +6,8 @@ from articleapp.froms import ArticleCreationForm
 from articleapp.models import Article
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import*
+from django.views.generic.edit import FormMixin
+from commentapp.froms import CommentCreationForm
 
 
 @method_decorator(login_required, 'get')
@@ -27,8 +29,9 @@ class ArticleCreateView(CreateView):
         return super().form_valid(form)
 
 
-class ArticleDetailView(DetailView):
+class ArticleDetailView(DetailView, FormMixin):
     model = Article
+    form_class = CommentCreationForm
     context_object_name = 'target_article' #쉽게말해서 이 클래스를 생성한 유저 (주인의 이름)
     template_name = 'articleapp/detail.html'
 
