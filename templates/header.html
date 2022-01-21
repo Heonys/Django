@@ -4,37 +4,39 @@
             <h1 class="MyDjango_logo">JIHEON'S Django</h1>
         </div>
         
-        <div>
+        <div class="pragmatic_header_navbar">
 
-          <a href="{% url 'articleapp:list' %}">
-            {% comment %} 현재 어디에있든 로그인 하고나서 반환하는 next값에 현재 경로를 줌 {% endcomment %}
-            <span>article</span>
+          <a href="{% url 'articleapp:list' %}" class="pragmatic_header_nav">
+            <span>Article</span>
           </a>
 
-          <a href="{% url 'accountapp:test' %}">
-            {% comment %} 현재 어디에있든 로그인 하고나서 반환하는 next값에 현재 경로를 줌 {% endcomment %}
+          <a href="{% url 'projectapp:list' %}" class="pragmatic_header_nav">
+            <span>Project</span>
+          </a>
+
+
+          <a href="{% url 'accountapp:test' %}" class="pragmatic_header_nav">
             <span>어쩔티비</span>
           </a>
 
-          <span>nav2</span> 
-
+        
           {% if not user.is_authenticated %}
 
-             <a href="{% url 'accountapp:login' %}?next={{ request.path }}">
-               {% comment %} 현재 어디에있든 로그인 하고나서 반환하는 next값에 현재 경로를 줌 {% endcomment %}
+             <a href="{% url 'accountapp:login' %}?next={{ request.path }}" class="pragmatic_header_nav">
+  
                <span>Login</span>
              </a>
 
-             <a href="{% url 'accountapp:create' %}">
+             <a href="{% url 'accountapp:create' %}" class="pragmatic_header_nav" class="pragmatic_header_nav">
                <span>SignUp</span>
              </a> 
 
 
           {% else %}
-             <a href="{% url 'accountapp:detail' pk=user.pk %}">
+             <a href="{% url 'accountapp:detail' pk=user.pk %}" class="pragmatic_header_nav">
                <span>MyPage</span>
              </a>
-             <a href="{% url 'accountapp:logout' %}?next={% url 'accountapp:test' %}">
+             <a href="{% url 'accountapp:logout' %}?next={% url 'accountapp:test' %}" class="pragmatic_header_nav">
                <span>Logout</span>
              </a>
           {% endif %}

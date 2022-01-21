@@ -11,11 +11,11 @@
         {% if target_user.profile.nickname %}
 
         <img src="{{ target_user.profile.image.url }}" alt="" 
-        style="height: 10rem; width: 10rem; border-radius: 20rem; margin-bottom: 2rem;">
+        style="height: 10rem; width: 10rem; border-radius: 20rem; margin-bottom: 2rem; object-fit: cover;">
 
         <h2 style="font-family: 'NanumSquareBold';">
             {{ target_user.profile.nickname }}
-
+            
                 {% if target_user == user %}
                     <a href="{% url 'profileapp:update' pk=target_user.profile.pk %}">
                         edit
