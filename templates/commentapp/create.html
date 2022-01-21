@@ -20,7 +20,7 @@
         {% if user.is_authenticated %}
         <input type="submit" class="brn btn-dark rounded-pill col-6 mt-4">
         {% else %}
-        <a href="{% url 'accountapp:login '%}?next={{ request.path }}" class="brn btn-dark rounded-pill col-6 mt-4">
+        <a href="{% url 'accountapp:login' %}?next={{ request.path }}" class="brn btn-dark rounded-pill btn-lg mt-4 ">
             Login 
         </a>
         {% endif %}

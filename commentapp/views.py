@@ -1,14 +1,13 @@
 from django.urls import reverse, reverse_lazy
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import*
-from django.views.generic import CreateView, DetailView
+from django.views.generic import CreateView, DeleteView
 from articleapp.models import Article
+from commentapp.decorators import comment_ownership
 from commentapp.models import Comment
 from commentapp.froms import CommentCreationForm
 
 
-# @method_decorator(login_required, 'get')
-# @method_decorator(login_required, 'post')
 class CommentCreateView(CreateView):
     model = Comment
     form_class = CommentCreationForm
@@ -27,3 +26,12 @@ class CommentCreateView(CreateView):
         return reverse('articleapp:detail', kwargs={'pk':self.object.article.pk})
 
 
+@method_decorator(comment_ownership, 'get')
+@method_decorator(comment_ownership, 'post')
+class CommentDeleteView(DeleteView):
+    model = Comment 
+    context_object_name = 'target_comment'
+    template_name = 'commentapp/delete.html'
+
+    def get_success_url(self):
+        return reverse('articleapp:detail', kwargs={'pk':self.object.article.pk})
