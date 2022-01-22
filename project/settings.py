@@ -126,7 +126,7 @@ STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
 
-LOGIN_REDIRECT_URL = reverse_lazy('accountapp:test')
+LOGIN_REDIRECT_URL = reverse_lazy('home')
 LOOUT_REDIRECT_URL = reverse_lazy('accountapp:login')
 
 MEDIA_URL = '/media/'
