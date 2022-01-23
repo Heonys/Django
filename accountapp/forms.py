@@ -1,6 +1,7 @@
 from django.contrib.auth.forms import UserCreationForm
 
 
+
 # 상속을받아서 >> 커스텀아이징 클래스
 
 class AccountUpdateForm(UserCreationForm):
@@ -8,5 +9,3 @@ class AccountUpdateForm(UserCreationForm):
         super().__init__(*args,**kwargs)
         
         self.fields['username'].disabled = True
-
-        

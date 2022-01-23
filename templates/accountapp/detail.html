@@ -31,9 +31,9 @@
 
         {% else %}
             {% if target_user == user %}
-            <a href="{% url 'profileapp:create' %}">
+            <a href="{% url 'profileapp:create' %}" class="btn btn-light">
                 <h2 style="font-family: 'NanumSquareBold';">
-                    Create Profile
+                    프로필 만들기
                 </h2>
             </a>
             {% else %}
@@ -43,7 +43,7 @@
 
 
 
-
+    <div>        
         {% if target_user == user %}
 
         <a class="material-icons"
@@ -57,7 +57,7 @@
            href="{% url 'accountapp:delete' pk=user.pk %}">
                 cancel
         </a>
-
+    </div>
         {% endif %}
 
     </div>

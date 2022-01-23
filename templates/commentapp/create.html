@@ -18,10 +18,10 @@
         <br>
 
         {% if user.is_authenticated %}
-        <input type="submit" class="brn btn-dark rounded-pill col-6 mt-4">
+        <input type="submit" class="brn btn-dark rounded-pill col-6 mt-4" value="작성">
         {% else %}
-        <a href="{% url 'accountapp:login' %}?next={{ request.path }}" class="brn btn-dark rounded-pill btn-lg mt-4 ">
-            Login 
+        <a href="{% url 'accountapp:login' %}?next={{ request.path }}" class="brn btn-dark rounded-pill btn-sm mt-4 ">
+            로그인해서 댓글을 작성해주세요
         </a>
         {% endif %}
         

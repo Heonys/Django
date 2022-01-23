@@ -12,6 +12,7 @@ from django.views.generic.list import MultipleObjectMixin
 from articleapp.models import Article
 
 
+
 # 데코레이터 배열 
 has_ownership = [account_ownership, login_required]
 
