@@ -1,4 +1,4 @@
-from .base import *
+from ..settings import *
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '0&4(%&o+--&n1ry748aak855t+6177(ho70^9c1c58)o3vz=pk'
